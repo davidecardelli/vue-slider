@@ -1,0 +1,73 @@
+.slide {
+    height: 450px;
+    width: 750px;
+    position: relative;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+.caption {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    text-shadow: 0 0 5px black;
+
+    color: white;
+    text-align: right;
+}
+
+#container-thumb{
+    height: 450px;
+}
+
+.thumb{
+    height: 90px;
+}
+
+.thumb.selected {
+    border: 3px solid black;
+}
+
+#container-thumb img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#container-thumb {
+    position: relative;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: 0 0 5px white;
+    cursor: pointer;
+}
+
+.up {
+    position: absolute;
+
+    top: 5px;
+    right: 50%;
+    transform: translate(50%);
+}
+
+.down {
+    position: absolute;
+
+    bottom: 5px;
+    right: 50%;
+    transform: translate(50%);
+}
