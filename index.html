@@ -24,29 +24,29 @@
     <!-- COLLEGAMENTO A VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- COLLEGAMENTO AL MIO FILE JAVASCRIPT -->
+    <script defer src="data.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
     <div id="carousel" class="d-flex mt-5 d-flex align-items-center justify-content-center">
         
         <div id="container-slide" class="me-1">
-
-            <div v-for="(pic, i) in pictures" v-show="i === currentIndex" class="slide">
+            <div v-for="(pic, i) in data" v-show="i === currentIndex" class="slide">
                 <img :src="pic.image" :alt="pic.title">
                 <div class="caption">
                     <h2>{{ pic.title }}</h2>  
                     <p>{{ pic.text }}</p>
                 </div>
             </div>
-
-
         </div>
         
         <div id="container-thumb">
-
-            <div v-for="(pic, i) in pictures" class="thumb">
+            <i id="arrow-up" class="bi bi-arrow-up-square-fill arrow up" @click="goToPrev"></i>
+            <div v-for="(pic, i) in data" :class="{'selected' : i === currentIndex}" class="thumb">
                 <img :src="pic.image" :alt="pic.title">
             </div>
+            <i id="arrow-down" class="bi bi-arrow-down-square-fill arrow down" @click="goToNext"></i>
+
               
         </div>
 
@@ -57,3 +57,4 @@
 
 <!-- Cicliamo all'interno di un array attraverso il v-for! Gli forniamo i parametri, (pic e index) e poi diciamo dove dobbiamo ciclare (pictures)  -->
 <!-- Attraverso il v-show mostriamo il div solo ed esclusivamente quando la condizione i === currentIndex risulta vera -->
+<!-- I due punti prima di un attributo, sono la forma contratta di v-bind, che ci permette di inserire una variabile all'interno di un attributo: src, class, alt etc -->
