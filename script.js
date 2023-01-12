@@ -23,6 +23,10 @@ methods: {
   goToNext () {
     if (this.currentIndex === this.data.length - 1) this.currentIndex = 0
     else this.currentIndex++;
+  },
+
+  goTo (index) {
+    this.currentIndex = index;
   }
 }
 

@@ -43,7 +43,7 @@
         <div id="container-thumb">
             <i id="arrow-up" class="bi bi-arrow-up-square-fill arrow up" @click="goToPrev"></i>
             <div v-for="(pic, i) in data" :class="{'selected' : i === currentIndex}" class="thumb">
-                <img :src="pic.image" :alt="pic.title">
+                <img :src="pic.image" :alt="pic.title" @click="goTo(i)">
             </div>
             <i id="arrow-down" class="bi bi-arrow-down-square-fill arrow down" @click="goToNext"></i>
 
