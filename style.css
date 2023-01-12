@@ -2,11 +2,6 @@
     height: 450px;
     width: 750px;
     position: relative;
-    display: none;
-}
-
-.slide.active {
-    display: block;
 }
 
 .slide img{

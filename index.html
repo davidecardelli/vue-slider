@@ -30,12 +30,30 @@
     <div id="carousel" class="d-flex mt-5 d-flex align-items-center justify-content-center">
         
         <div id="container-slide" class="me-1">
+
+            <div v-for="(pic, i) in pictures" v-show="i === currentIndex" class="slide">
+                <img :src="pic.image" :alt="pic.title">
+                <div class="caption">
+                    <h2>{{ pic.title }}</h2>  
+                    <p>{{ pic.text }}</p>
+                </div>
+            </div>
+
+
         </div>
         
         <div id="container-thumb">
+
+            <div v-for="(pic, i) in pictures" class="thumb">
+                <img :src="pic.image" :alt="pic.title">
+            </div>
+              
         </div>
 
     </div>
 
 </body>
 </html>
+
+<!-- Cicliamo all'interno di un array attraverso il v-for! Gli forniamo i parametri, (pic e index) e poi diciamo dove dobbiamo ciclare (pictures)  -->
+<!-- Attraverso il v-show mostriamo il div solo ed esclusivamente quando la condizione i === currentIndex risulta vera -->
