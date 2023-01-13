@@ -31,7 +31,7 @@
 }
 
 .thumb.selected {
-    border: 3px solid black;
+    box-shadow: 0 0 5px black;
 }
 
 #container-thumb img{
